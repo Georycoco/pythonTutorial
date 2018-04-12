@@ -28,7 +28,12 @@ infor.get('QQ')
 infor.get('Money')   
 
 
+#判断 重点！！！！ 查找字典中的单个元素
+infor = [{'Name':'George', 'Address':'Melbourne', 'Age':27},{'Name':'John', 'Address':'Melbourne', 'Age':28}]
+print(infor)
 
+for temp in infor:
+    print(temp)
 
-
-
+for temp in infor:
+    print(temp['Name'])
