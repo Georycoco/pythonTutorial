@@ -114,3 +114,16 @@ name_new = ''
 name_new.join(name)
 
 new_contant = content.split() # 直接什么都不写，会安不可见的字符切割 
+
+
+
+
+
+
+
+
+
+
+
+
+
