@@ -8,6 +8,8 @@ num = (1,2,3,4)
 
 
 def print_fozu():
+    print("  ")
+    print("  ")
     print("                            _ooOoo_      ")
     print("                           o8888888o     ")
     print("                           88  .  88      ")

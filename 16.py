@@ -27,6 +27,7 @@ while True:
 
         #print(student_List) for test
 
+    '''
     elif select == 2:
         delete_Name = input('enter name to delete')
         for temp in student_List:
@@ -35,7 +36,7 @@ while True:
 
 
         print(student_List)
-
+    '''
     elif select == 3:
        
         print(student_List)

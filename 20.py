@@ -13,6 +13,16 @@ def test():
 num = test()
 print(num)
 
+
+def divid(a,b):
+    aa = a//b
+    bb = a%b
+    return aa, bb  # 元组
+ 
+aaa, bbb = divid(12,4)  # aaa = 3, bbb = 0
+print(aaa)
+print(bbb)
+
 '''
 def 函数():
     psss
