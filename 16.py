@@ -28,7 +28,12 @@ while True:
         #print(student_List) for test
 
     elif select == 2:
-       
+        delete_Name = input('enter name to delete')
+        for temp in student_List:
+            if delete_Name == temp['Name']
+                
+
+
         print(student_List)
 
     elif select == 3:
