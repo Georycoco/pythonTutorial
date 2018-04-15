@@ -6,30 +6,30 @@ class CarStore(object):
 		self.factory = Factory()
 
 
-	def select(self,car_model):
-		
+def select(self, car_model):
 
     def order(self, car_model):
-        return self.factory.select_by_type(car_model)
+        return self.factory.select_by_type
 
 
 class Factory(object):
-	def select_by_type(car_model):
+
+    def select_by_type(car_model):
 		if car_model == 'QQ':
-	        return QQ()
-	    elif car_model == 'greatWall':
-	        return greatWall()
-	    elif car_model == 'Ix35':
-	        return Ix35()
-	    elif car_model == 'Ix35':
-	        return Ix35()
+			return QQ()
+		elif car_model == 'greatWall':
+			return greatWall()
+		elif car_model == 'Ix35':
+			return Ix35()
+
+
 
 
 class brand(object):
 	def export_price(self):
-
+		pass
 	def sale(self):
-
+		pass
 
 class vehicle(object):
     def move(self):
