@@ -26,20 +26,20 @@ while True:
         student_List.append(new_Student)
 
         #print(student_List) for test
+    elif select == 3:
+        print(student_List)
 
-    '''
+
     elif select == 2:
         delete_Name = input('enter name to delete')
         for temp in student_List:
-            if delete_Name == temp['Name']
+            if delete_Name == temp['Name']:
+                pass
                 
 
 
         print(student_List)
-    '''
-    elif select == 3:
-       
-        print(student_List)
+
 
     elif select == 4: # search a student
         find_Name = input('please enter a name for search')

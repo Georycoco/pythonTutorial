@@ -35,5 +35,5 @@ print(name);
 name[0] = 'Shirley' # 把下标0 的元素改成‘Shirley’
 
 #查询  in / not in
-if 'Angler' not in name_List
+if 'Angler' not in name_List:
     print('Name available..')

@@ -1,13 +1,22 @@
 import boto3
-from pprint import pprint
 
+
+s3 = boto3.resource('s3')
+bucket = s3.Bucket('mygirlfriend')
+items = ['']
+for obj in bucket.objects.all():
+        #items += obj.key
+        print(obj)
+
+print(items)
+'''
 BUCKET = 'mygirlfriend'
 KEY = '1.jpg'
 FEATURES_BLACKLIST = ("Landmarks", "Emotions", "Pose", "Quality", "BoundingBox", "Confidence")
 
 
 def detect_faces(bucket, key):
-    rekognition = boto3.client("rekognition", 'ap-southeast-2')
+    rekognition = boto3.client("rekognition")
     response = rekognition.detect_faces(
         Image={
             "S3Object": {
@@ -22,6 +31,26 @@ def detect_faces(bucket, key):
 
 
 pprint(detect_faces('mygirlfriend','1,jpg'))
+'''
+import boto3
+import json
+
+if __name__ == "__main__":
+    fileName = '2.jpg'
+    bucket = 'mygirlfriend'
+    client = boto3.client('rekognition', 'ap-southeast-2')
+
+    response = client.detect_faces(Image={'S3Object': {'Bucket': 'mygirlfriend', 'Name': '2.jpg'}}, Attributes=['ALL'])
+    
+
+    print('Detected faces for ' + '2.jpg')
+    for faceDetail in response['FaceDetails']:
+        print('The detected face is between ' + str(faceDetail['AgeRange']['Low'])
+              + ' and ' + str(faceDetail['AgeRange']['High']) + ' years old')
+        print('Here are the other attributes:')
+        print(json.dumps(faceDetail, indent=4, sort_keys=True))
+
+
 
 '''
 for face in detect_faces('mygirlfriend', '2.jpg'):

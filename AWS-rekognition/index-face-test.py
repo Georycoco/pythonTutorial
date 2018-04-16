@@ -6,23 +6,26 @@ IMAGE_ID = KEY  # S3 key as ImageId
 COLLECTION = "mycollection"
 
 
-def index_faces(bucket, key, collection_id, image_id=None, attributes=(), region="ap-southeast-2"):
-    rekognition = boto3.client("rekognition", region)
+def index_faces(image_id=None, attributes=(), region="ap-southeast-2"):
+    rekognition = boto3.client("rekognition")
     response = rekognition.index_faces(
+        CollectionId = 'mycollection',
         Image={
             "S3Object": {
                 "Bucket": "mygirlfriend",
-                "Name": '4.jpg',
+                "Name": '4.jpg'
             }
         },
-        CollectionId=collection_id,
-        ExternalImageId=image_id,
-        DetectionAttributes=attributes,
+
+        ExternalImageId='Demo',
+        DetectionAttributes=['DEFAULT'],
     )
     return response['FaceRecords']
 
+print(index_faces('mygirlfriend,'))
 
-for record in index_faces(BUCKET, KEY, COLLECTION, IMAGE_ID):
+
+for record in index_faces(BUCKET, KEY, COLLECTION):
     face = record['Face']
     # details = record['FaceDetail']
     print("Face ({}%)".format(face['Confidence']))
