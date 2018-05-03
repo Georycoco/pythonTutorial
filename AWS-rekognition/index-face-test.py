@@ -9,7 +9,7 @@ COLLECTION = "mycollection"
 def index_faces(image_id=None, attributes=(), region="ap-southeast-2"):
     rekognition = boto3.client("rekognition")
     response = rekognition.index_faces(
-        CollectionId = 'mycollection',
+        CollectionId='mycollection',
         Image={
             "S3Object": {
                 "Bucket": "mygirlfriend",
@@ -22,8 +22,8 @@ def index_faces(image_id=None, attributes=(), region="ap-southeast-2"):
     )
     return response['FaceRecords']
 
-print(index_faces('mygirlfriend,'))
 
+print(index_faces('mygirlfriend,'))
 
 for record in index_faces(BUCKET, KEY, COLLECTION):
     face = record['Face']
