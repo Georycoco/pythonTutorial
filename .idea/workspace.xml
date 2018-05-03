@@ -5,60 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60b24bc1-aeaf-458f-a653-7c6d2e36c1aa" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/AWS-Rekognition/ProcessMediaFile.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AWS-Rekognition/detect-search-face-test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AWS-Rekognition/face-search-progress.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AWS-Rekognition/loop.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AWS-Rekognition/startFaceSearchTest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AWS-Rekognition/start_face_search_video.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AWS-Rekognition/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AWS-Rekognition/triger-event-test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OpenCV/camera-video.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python基础/21_student-info-sys.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python基础/31.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python基础/34.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python基础/35_飞机大战.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/爬虫/正则表达式.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/pythonTutorial.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pythonTutorial.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01.py" beforeDir="false" afterPath="$PROJECT_DIR$/python基础/01.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/02.py" beforeDir="false" afterPath="$PROJECT_DIR$/python基础/02.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03.py" beforeDir="false" afterPath="$PROJECT_DIR$/python基础/03.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04.py" beforeDir="false" afterPath="$PROJECT_DIR$/python基础/04.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/05.py" beforeDir="false" afterPath="$PROJECT_DIR$/python基础/05.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/06.py" beforeDir="false" afterPath="$PROJECT_DIR$/python基础/06.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/07.py" beforeDir="false" afterPath="$PROJECT_DIR$/python基础/07.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/08.py" beforeDir="false" afterPath="$PROJECT_DIR$/python基础/08.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/09.py" beforeDir="false" afterPath="$PROJECT_DIR$/python基础/09.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/10.py" beforeDir="false" afterPath="$PROJECT_DIR$/python基础/10.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/11.py" beforeDir="false" afterPath="$PROJECT_DIR$/python基础/11.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/12.py" beforeDir="false" afterPath="$PROJECT_DIR$/python基础/12.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/13.py" beforeDir="false" afterPath="$PROJECT_DIR$/python基础/13.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/14.py" beforeDir="false" afterPath="$PROJECT_DIR$/python基础/14.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/15.py" beforeDir="false" afterPath="$PROJECT_DIR$/python基础/15.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/16.py" beforeDir="false" afterPath="$PROJECT_DIR$/python基础/16.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/17.py" beforeDir="false" afterPath="$PROJECT_DIR$/python基础/17.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/18.py" beforeDir="false" afterPath="$PROJECT_DIR$/python基础/18.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/19.py" beforeDir="false" afterPath="$PROJECT_DIR$/python基础/19.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/20.py" beforeDir="false" afterPath="$PROJECT_DIR$/python基础/20.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/21.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/22.py" beforeDir="false" afterPath="$PROJECT_DIR$/python基础/22.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/23.py" beforeDir="false" afterPath="$PROJECT_DIR$/python基础/23.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/24.py" beforeDir="false" afterPath="$PROJECT_DIR$/python基础/24.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/25.py" beforeDir="false" afterPath="$PROJECT_DIR$/python基础/25.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/26.py" beforeDir="false" afterPath="$PROJECT_DIR$/python基础/26.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/27.py" beforeDir="false" afterPath="$PROJECT_DIR$/python基础/27.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/28.py" beforeDir="false" afterPath="$PROJECT_DIR$/python基础/28.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/29.py" beforeDir="false" afterPath="$PROJECT_DIR$/python基础/29.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/30.py" beforeDir="false" afterPath="$PROJECT_DIR$/python基础/30.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/31.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/32.py" beforeDir="false" afterPath="$PROJECT_DIR$/python基础/32.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/33.py" beforeDir="false" afterPath="$PROJECT_DIR$/python基础/33.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AWS-rekognition/detect-face-test.py" beforeDir="false" afterPath="$PROJECT_DIR$/AWS-rekognition/detect-face-test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AWS-rekognition/index-face-test.py" beforeDir="false" afterPath="$PROJECT_DIR$/AWS-rekognition/index-face-test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AWS-rekognition/search-face-byimage.py" beforeDir="false" afterPath="$PROJECT_DIR$/AWS-rekognition/search-face-byimage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AWS-rekognition/video-rekognition-test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README" beforeDir="false" afterPath="$PROJECT_DIR$/python基础/README" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/爬虫/正则表达式.py" beforeDir="false" afterPath="$PROJECT_DIR$/爬虫/正则表达式.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -128,7 +75,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="1.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="1.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/爬虫/1.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
@@ -137,11 +84,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="正则表达式.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="正则表达式.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/爬虫/正则表达式.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+            <state relative-caret-position="630">
+              <caret line="42" column="22" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -208,8 +155,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="2053" />
-    <option name="y" value="62" />
+    <option name="x" value="1952" />
+    <option name="y" value="45" />
     <option name="width" value="1282" />
     <option name="height" value="1047" />
   </component>
@@ -386,15 +333,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2253" y="386" width="1282" height="1047" extended-state="0" />
+    <frame x="1952" y="45" width="1282" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21563981" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21563981" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" x="1951" y="466" width="755" height="533" id="Python Console" order="7" type="WINDOWED" visible="true" weight="0.24892704" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.23497854" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23497854" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32939914" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -699,17 +646,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/爬虫/正则表达式.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/爬虫/1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/爬虫/正则表达式.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="42" column="22" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="22" />
         </state>
       </provider>
     </entry>
