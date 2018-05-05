@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="60b24bc1-aeaf-458f-a653-7c6d2e36c1aa" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python基础/35_飞机大战.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plane-game/飞机大战.py" beforeDir="false" afterPath="$PROJECT_DIR$/plane-game/飞机大战.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,8 +20,8 @@
       <file leaf-file-name="飞机大战.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/plane-game/飞机大战.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1376">
-              <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
+            <state relative-caret-position="1808">
+              <caret line="119" column="32" lean-forward="true" selection-start-line="119" selection-start-column="32" selection-end-line="119" selection-end-column="32" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -84,7 +84,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="884" />
+    <option name="x" value="744" />
     <option name="width" value="2104" />
     <option name="height" value="1932" />
   </component>
@@ -93,7 +93,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -109,12 +108,26 @@
             <path>
               <item name="pythonTutorial" type="b2602c69:ProjectViewProjectNode" />
               <item name="pythonTutorial" type="462c0819:PsiDirectoryNode" />
+              <item name="plane-game" type="462c0819:PsiDirectoryNode" />
+              <item name="fighter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pythonTutorial" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pythonTutorial" type="462c0819:PsiDirectoryNode" />
+              <item name="plane-game" type="462c0819:PsiDirectoryNode" />
+              <item name="fighter" type="462c0819:PsiDirectoryNode" />
+              <item name="image" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pythonTutorial" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pythonTutorial" type="462c0819:PsiDirectoryNode" />
               <item name="爬虫" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -230,6 +243,42 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="飞机大战" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="pythonTutorial" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/plane-game" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/plane-game/飞机大战.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="飞机大战" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="pythonTutorial" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/plane-game" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/plane-game/飞机大战.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <list>
       <item itemvalue="Python.21-student-info-sys" />
       <item itemvalue="Python.1" />
@@ -240,10 +289,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.飞机大战" />
+        <item itemvalue="Python.21-student-info-sys" />
         <item itemvalue="Python.35_飞机大战-Create-game-window" />
         <item itemvalue="Python.正则表达式" />
         <item itemvalue="Python.1" />
-        <item itemvalue="Python.21-student-info-sys" />
       </list>
     </recent_temporary>
   </component>
@@ -261,14 +310,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="442" y="0" width="1052" height="966" extended-state="0" />
+    <frame x="372" y="0" width="1052" height="966" extended-state="0" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22928709" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" x="1951" y="466" width="755" height="533" id="Python Console" order="7" type="WINDOWED" weight="0.24892704" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.2853403" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.28454334" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32939914" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -286,16 +335,27 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/python基础/35_飞机大战.py">
+    <entry file="file://$PROJECT_DIR$/plane-game/飞机大战.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="1056">
+          <caret line="66" column="25" lean-forward="true" selection-start-line="66" selection-start-column="25" selection-end-line="66" selection-end-column="25" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/plane-game/飞机大战.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1376">
+          <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python基础/35_飞机大战.py" />
     <entry file="file://$PROJECT_DIR$/python基础/33.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
@@ -381,20 +441,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/python基础/35_飞机大战.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/python基础/35_飞机大战.py" />
     <entry file="file://$PROJECT_DIR$/plane-game/飞机大战.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1376">
-          <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
+        <state relative-caret-position="1808">
+          <caret line="119" column="32" lean-forward="true" selection-start-line="119" selection-start-column="32" selection-end-line="119" selection-end-column="32" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
