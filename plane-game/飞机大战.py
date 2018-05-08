@@ -1,3 +1,5 @@
+import random
+import time
 import pygame
 from pygame.locals import *
 
@@ -30,63 +32,105 @@ class HeroPlane(object):
         self.screen.blit(self.image, (self.x, self.y))
 
         ''', self.bullet_list_left, self.bullet_list_right:'''
-        for bullets in self.bullet_list_mid:
+        for bullet in self.bullet_list_mid:
             bullet.display_bullet_mid()
-            '''
-            for bullets in self.bullet_list_left():
-                bullet.display_bullet_left()
-                for bullets in self.bullet_list_right():
-                    bullet.display_bullet_right()
-            '''
+            bullet.display_bullet_left()
+            bullet.display_bullet_right()
             bullet.move()
 
     def move_left(self):
-        self.x -= 10
+        self.x -= 15
 
     def move_right(self):
-        self.x += 10
+        self.x += 15
 
     def move_up(self):
-        self.y -= 10
+        self.y -= 15
 
     def move_down(self):
-        self.y += 10
+        self.y += 15
 
     def fire(self):
-        self.bullet_list_mid.append(bullet(self.screen, self.x, self.y, self.left_x, self.left_y, self.right_x, self.right_y))
-        #self.bullet_list_mid.append(bullet(self.screen, self.x, self.y))
-        #self.bullet_list_left.append(bullet(self.screen, self.left_x, self.left_y))
-        #self.bullet_list_left.append(bullet(self.screen, self.right_x, self.right_y))
+        self.bullet_list_mid.append(Bullet(self.screen, self.x, self.y))
+        #self.bullet_list_left.append(Bullet(self.screen, self.left_x, self.left_y))
+        #self.bullet_list_right.append(Bullet(self.screen, self.right_x, self.right_y))
 
 
 '''left_x, left_y, right_x, right_y'''
 
 
-class bullet(object):
-    def __init__(self, screen_temp, x, y, left_x, left_y, right_x, right_y):
+class Bullet(object):
+    def __init__(self, screen_temp, x, y):
+
+        self.left_x = x
+        self.left_y = y + 10
+        self.right_x = x + 80
+        self.right_y = y + 10
         self.x = x + 40
         self.y = y - 25
-        self.left_x = x + 30
-        self.left_y = y - 10
-        self.right_x = x + 50
-        self.right_y = y - 10
         self.screen = screen_temp
         # create a plane
         self.image = pygame.image.load('./fighter/image/bullet.png')
 
     def display_bullet_mid(self):
-        self.screen.blit(self.image, (self.x, self.y, self.left_x, self.left_y, self.right_x, self.right_y))
+        self.screen.blit(self.image, (self.x, self.y))
 
-    #def display_bullet_left(self):
-    #    self.screnn.blit(self.image, (self.left_x, self.left_y))
+    def display_bullet_left(self):
+        self.screen.blit(self.image, (self.left_x, self.left_y))
 
-    #def display_bullet_right(self):
-    #   self.screen.blit(self.image, (self.right_x, self.right_y))
+    def display_bullet_right(self):
+        self.screen.blit(self.image, (self.right_x, self.right_y))
 
     def move(self):
-        self.y -= 15
-        self.right_y -= 15
-        self.left_y -= 15
+        self.y -= 8
+        self.right_y -= 8
+        self.left_y -= 8
+        self.right_x += 1
+        self.left_x -= 1
+
+
+class Enemy (object):
+    """create enemy plane"""
+    def __init__(self, screen_temp):
+        self.ran_left = random.randint(30, 130)
+        self.ran_right = random.randint(150, 250)
+        self.ex = random.randint(50, 350)
+        self.ey = 0
+        self.screen = screen_temp
+        self.image = pygame.image.load('./fighter/image/enemy0.png')
+        self.enemy_list = []
+        self.enemy_bullet_list = []
+        self.direction = 'right'
+
+    def display(self):
+        for enemy in self.enemy_list:
+            enemy.display_enemy_1()
+            enemy.display_enemy_2()
+
+    def add_enemy(self):
+        while True:
+            self.enemy_list.append(Enemy(self.screen, self.ex, self.ey))
+            time.sleep(2)
+
+    def display_enemy_1(self):
+        self.screen.blit(self.image, (self.ex, self.ey))
+
+    def display_enemy_2(self):
+        self.screen.blit(self.image, (self.ex, self.ey))
+
+    def enemy_move(self):
+        """image width is 480"""
+        self.ey += 1
+
+        if self.ex > self.ran_right:
+            self.direction = 'left'
+        elif self.ex <= self.ran_left:
+            self.direction = 'right'
+
+        if self.direction == 'right':
+            self.ex += 0.5
+        elif self.direction == 'left':
+            self.ex -= 0.5
 
 
 def key_control(hero_temp):
@@ -129,14 +173,19 @@ def main():
     # create a plane object
     hero = HeroPlane(screen)
 
+    enemy_0 = Enemy(screen)
+    #enemy_0.__init__(screen)
+    #enemy_number = 0
+
     while True:
         # show background image
         screen.blit(background, (0, 0))
         hero.display()
-
+        enemy_0.add_enemy()
+        enemy_0.display_enemy_1()
+        enemy_0.enemy_move()
         # update content to be show in screen/fresh screen
         pygame.display.update()
-
         key_control(hero)
 
 
