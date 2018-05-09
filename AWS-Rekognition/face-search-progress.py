@@ -2,11 +2,9 @@ from __future__ import print_function
 import boto3
 import urllib
 
-
 dynamodb = boto3.client('dynamodb')
 s3 = boto3.client('s3')
 rekognition = boto3.client('rekognition')
-
 
 
 def search_faces_by_image(bucket, key):
@@ -44,12 +42,11 @@ def lambda_handler(event, context):
     try:
         response = search_faces_by_image(bucket, key)
 
-
         faceId = response['FaceMatches'][0]['Face']['FaceId']
         # confidence = response['FaceRecords'][0]['Face']['Confidence']
         similarity = response['FaceMatches'][0]['Similarity']
 
-        update_dytable('face-search-test', faceId, str(similarity))  #not working on 'N' type
+        update_dytable('face-search-test', faceId, str(similarity))  # not working on 'N' type
 
         print(response)
         return response
@@ -59,6 +56,7 @@ def lambda_handler(event, context):
         print(e)
         print("Error processing object {} from bucket {}. ".format(key, bucket))
         raise e
+
 
 '''
 for record in search_by_image():

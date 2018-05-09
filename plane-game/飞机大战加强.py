@@ -10,15 +10,39 @@ Object:
 """
 
 
-class HeroPlane(object):
-    def __init__(self, screen_temp):
+class Plane(object):
+    def __init__(self, screen_temp, x, y, image_name):
         # set initial object position
-        self.x = 200
-        self.y = 700
+        self.x = x
+        self.y = y
         self.screen = screen_temp
         # create a plane
-        self.image = pygame.image.load('./fighter/image/hero1.png')
-        self.bullet_list_mid = [] # bullet showing on screen
+        self.image = pygame.image.load(image_name)
+        self.bullet_list_mid = []  # bullet showing on screen
+        # self.bullet_list_left = []
+        # self.bullet_list_right = []
+
+    def display(self):
+        self.screen.blit(self.image, (self.x, self.y))
+        for bullets in self.bullet_list_mid:
+            bullets.display_bullet()
+            bullets.move()
+            if bullets.judge():  # check if bullets out of margin
+                self.bullet_list_mid.remove(bullets)
+
+
+class BaseBullet(object):
+    def __init__(self, screen_temp, x, y, image_name):
+        self.x = x
+        self.y = y
+        self.screen = screen_temp
+        # create a plane
+        self.image = pygame.image.load(image_name)
+
+
+class HeroPlane(Plane):
+    def __init__(self, screen_temp):
+        Plane.__init__(self, screen_temp, 200, 700, './fighter/image/hero1.png')
 
     def display(self):
         # show player plane
@@ -26,7 +50,7 @@ class HeroPlane(object):
 
         ''', self.bullet_list_left, self.bullet_list_right:'''
         for bullets in self.bullet_list_mid:
-            #bullets.display_bullet_mid()
+            bullets.display_bullet_mid()
             bullets.display_bullet_left()
             bullets.display_bullet_right()
             bullets.move()
@@ -54,20 +78,16 @@ class HeroPlane(object):
         self.bullet_list_mid.append(Bullet(self.screen, self.x, self.y))
 
 
-class Bullet(object):
+class Bullet(BaseBullet):
     def __init__(self, screen_temp, x, y):
+        BaseBullet.__init__(self, screen_temp, x+40, y-25, './fighter/image/bullet.png')
         self.left_x = x
         self.left_y = y + 10
         self.right_x = x + 80
         self.right_y = y + 10
-        self.x = x + 40
-        self.y = y - 25
-        self.screen = screen_temp
-        # create a plane
-        self.image = pygame.image.load('./fighter/image/bullet.png')
 
-    #def display_bullet_mid(self):
-    #    self.screen.blit(self.image, (self.x, self.y))
+    def display_bullet_mid(self):
+        self.screen.blit(self.image, (self.x, self.y))
 
     def display_bullet_left(self):
         self.screen.blit(self.image, (self.left_x, self.left_y))
@@ -79,8 +99,8 @@ class Bullet(object):
         self.y -= 8
         self.right_y -= 8
         self.left_y -= 8
-        #self.right_x += 1
-        #self.left_x -= 1
+        self.right_x += 1
+        self.left_x -= 1
 
     def judge(self):
         if self.left_y < 10:
@@ -89,57 +109,41 @@ class Bullet(object):
             return False
 
 
-class Enemy (object):
+class Enemy (Plane):
     """create enemy plane"""
     def __init__(self, screen_temp):
+        Plane.__init__(self, screen_temp, 0, 0, './fighter/image/enemy0.png')
         self.ran_left = random.randint(30, 130)
         self.ran_right = random.randint(150, 250)
-        self.ex = random.randint(50, 350)
-        self.ey = 0
-        self.screen = screen_temp
-        self.image = pygame.image.load('./fighter/image/enemy0.png')
-        self.enemy_list = []
-        self.enemy_bullet_list = []
+        self.x = random.randint(50, 350)
+        self.y = 0
         self.direction = 'right'
-
-    def display_enemy(self):
-        self.screen.blit(self.image, (self.ex, self.ey))
-
-        for bullets in self.enemy_bullet_list:
-            bullets.display_bullet()
-            bullets.move()
-            if bullets.judge():  #check if bullets out of margin
-                self.enemy_bullet_list.remove(bullets)
 
     def enemy_move(self):
         """image width is 480"""
-        self.ey += 0.5
+        self.y += 0.5
 
-        if self.ex > self.ran_right:
+        if self.x > self.ran_right:
             self.direction = 'left'
-        elif self.ex <= self.ran_left:
+        elif self.x <= self.ran_left:
             self.direction = 'right'
 
         if self.direction == 'right':
-            self.ex += 0.5
+            self.x += 0.5
         elif self.direction == 'left':
-            self.ex -= 0.5
+            self.x -= 0.5
 
     def fire(self):
         #由于程序在一个while循环内，不能用sleep,所以写一个random，当随机到特定数字时再调用
         #if random.randint(1, 00) == 25:
         random_num = random.randint(1, 200)
         if random_num == 120 or random_num == 90:
-            self.enemy_bullet_list.append(EnemyBullet(self.screen, self.ex, self.ey))
+            self.bullet_list_mid.append(EnemyBullet(self.screen, self.x, self.y))
 
 
-class EnemyBullet(object):
+class EnemyBullet(BaseBullet):
     def __init__(self, screen_temp, x, y):
-        self.x = x + 22
-        self.y = y + 40
-        self.screen = screen_temp
-        # create a plane
-        self.image = pygame.image.load('./fighter/image/bullet1.png')
+        BaseBullet.__init__(self, screen_temp, x+22, y+40, './fighter/image/bullet1.png')
 
     def display_bullet(self):
         self.screen.blit(self.image, (self.x, self.y))
@@ -204,6 +208,7 @@ def key_control(hero_temp):
                 hero_temp.fire()
             """
 
+
 def main():
     # create window
     screen = pygame.display.set_mode((480, 852), 0, 32)
@@ -216,7 +221,7 @@ def main():
         # show background image
         screen.blit(background, (0, 0))
         hero.display()
-        enemy_0.display_enemy()
+        enemy_0.display()
         enemy_0.enemy_move()
         enemy_0.fire()
         # update content to be show in screen/fresh screen
