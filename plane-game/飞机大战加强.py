@@ -1,43 +1,37 @@
 import random
-import time
 import pygame
 from pygame.locals import *
 
-"""
-面向对象编程,飞机大战
-Object:
 
-"""
-
-
-class Plane(object):
+class Base(object):
     def __init__(self, screen_temp, x, y, image_name):
-        # set initial object position
         self.x = x
         self.y = y
         self.screen = screen_temp
         # create a plane
         self.image = pygame.image.load(image_name)
-        self.bullet_list_mid = []  # bullet showing on screen
+
+
+class Plane(Base):
+    def __init__(self, screen_temp, x, y, image_name):
+        Base.__init__(self, screen_temp, x, y, image_name)
+        self.bullet_list = []  # bullet showing on screen
         # self.bullet_list_left = []
         # self.bullet_list_right = []
 
     def display(self):
         self.screen.blit(self.image, (self.x, self.y))
-        for bullets in self.bullet_list_mid:
+        for bullets in self.bullet_list:
             bullets.display_bullet()
             bullets.move()
             if bullets.judge():  # check if bullets out of margin
-                self.bullet_list_mid.remove(bullets)
+                self.bullet_list.remove(bullets)
 
 
-class BaseBullet(object):
-    def __init__(self, screen_temp, x, y, image_name):
-        self.x = x
-        self.y = y
-        self.screen = screen_temp
-        # create a plane
-        self.image = pygame.image.load(image_name)
+class BaseBullet(Base):
+
+    def display_bullet(self):
+        self.screen.blit(self.image, (self.x, self.y))
 
 
 class HeroPlane(Plane):
@@ -49,13 +43,13 @@ class HeroPlane(Plane):
         self.screen.blit(self.image, (self.x, self.y))
 
         ''', self.bullet_list_left, self.bullet_list_right:'''
-        for bullets in self.bullet_list_mid:
-            bullets.display_bullet_mid()
+        for bullets in self.bullet_list:
+            bullets.display_bullet()
             bullets.display_bullet_left()
             bullets.display_bullet_right()
             bullets.move()
             if bullets.judge():  #check if bullets out of margin
-                self.bullet_list_mid.remove(bullets)
+                self.bullet_list.remove(bullets)
                 # 这个方法容易漏删， 因为删除一个元素后面的往前补，会跳过一个，而这里display()会不不断调用，所以没有这个问题
                 # 实际开发的时候把想要删除的元素先存进另一个列表里
                 # a = [1,2,3,4,5,6,7]  b = [3,4]
@@ -75,10 +69,11 @@ class HeroPlane(Plane):
         self.y += 15
 
     def fire(self):
-        self.bullet_list_mid.append(Bullet(self.screen, self.x, self.y))
+        self.bullet_list.append(Bullet(self.screen, self.x, self.y))
 
 
-class Bullet(BaseBullet):
+class Bullet(BaseBullet):  # hero plane bullet
+
     def __init__(self, screen_temp, x, y):
         BaseBullet.__init__(self, screen_temp, x+40, y-25, './fighter/image/bullet.png')
         self.left_x = x
@@ -86,8 +81,8 @@ class Bullet(BaseBullet):
         self.right_x = x + 80
         self.right_y = y + 10
 
-    def display_bullet_mid(self):
-        self.screen.blit(self.image, (self.x, self.y))
+    #def display_bullet_mid(self):
+    #    self.screen.blit(self.image, (self.x, self.y))
 
     def display_bullet_left(self):
         self.screen.blit(self.image, (self.left_x, self.left_y))
@@ -116,8 +111,9 @@ class Enemy (Plane):
         self.ran_left = random.randint(30, 130)
         self.ran_right = random.randint(150, 250)
         self.x = random.randint(50, 350)
-        self.y = 0
+        #self.y = 0
         self.direction = 'right'
+        self.enemy_list = []
 
     def enemy_move(self):
         """image width is 480"""
@@ -138,15 +134,12 @@ class Enemy (Plane):
         #if random.randint(1, 00) == 25:
         random_num = random.randint(1, 200)
         if random_num == 120 or random_num == 90:
-            self.bullet_list_mid.append(EnemyBullet(self.screen, self.x, self.y))
+            self.bullet_list.append(EnemyBullet(self.screen, self.x, self.y))
 
 
 class EnemyBullet(BaseBullet):
     def __init__(self, screen_temp, x, y):
         BaseBullet.__init__(self, screen_temp, x+22, y+40, './fighter/image/bullet1.png')
-
-    def display_bullet(self):
-        self.screen.blit(self.image, (self.x, self.y))
 
     def move(self):
         self.y += 5
@@ -216,6 +209,7 @@ def main():
     # create a plane object
     hero = HeroPlane(screen)
     enemy_0 = Enemy(screen)
+    screen_frame = 0
 
     while True:
         # show background image
@@ -227,6 +221,7 @@ def main():
         # update content to be show in screen/fresh screen
         pygame.display.update()
         key_control(hero)
+        screen_frame += 1
 
 
 if __name__ == '__main__':

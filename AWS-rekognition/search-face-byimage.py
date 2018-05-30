@@ -46,7 +46,7 @@ def lambda_handler(event, context):
         # confidence = response['FaceRecords'][0]['Face']['Confidence']
         similarity = response['FaceMatches'][1]['Similarity']
 
-        update_dytable('face_search', faceId,str(similarity))
+        update_dytable('face_search', faceId, str(similarity))
 
         print(response)
         return response

@@ -204,6 +204,7 @@ def key_control(hero_temp):
                 hero_temp.fire()
             """
 
+
 def main():
     # create window
     screen = pygame.display.set_mode((480, 852), 0, 32)

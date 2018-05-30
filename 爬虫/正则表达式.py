@@ -39,7 +39,7 @@ print('r\na')
 print(re.search(r'r\wn', 'r\nn r4n'))
 print(re.search(r'r\Wn', 'r\nn r4n'))
 
-# \b 空格，只对单词开始和技术的空格有效,并且必须只有一个空格  \B则不管几个空格都可以
+# \b 空格，只对单词开始和结束的空格有效,并且必须只有一个空格  \B则不管几个空格都可以
 print(re.search(r'\b runs \b', 'dog runs to cat'))
 print(re.search(r'\B runs \B', 'dog  runs  to cat'))
 

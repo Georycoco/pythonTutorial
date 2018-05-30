@@ -2,11 +2,14 @@ import urllib
 import boto3
 import time
 import sys
-from pprint import pprint
 
 client = boto3.client('rekognition')
 dynamodb = boto3.client('dynamodb')
 s3 = boto3.client('s3')
+face_match = []
+similarity = []
+faces = []
+face_ID = []
 
 
 def start_face_search(bucket, key):
@@ -58,19 +61,22 @@ def read_job_status(jobId):
             time.sleep(5)
             continue
 
-
         elif response['JobStatus'] == 'SUCCEEDED':
+            outcome = response['Persons']
             print('Succeeded..')
-            similarity_list = []
-            # timeStamp = response['Persons'][0]['Timestamp']
-            # similarity = response['Persons'][0]['FaceMatches']['Similarity']
-            # print('timestamp: {}'.format(response['Timestamp']))
-            # faceId = response['Persons'][0]['FaceMatches']['Face']['FaceId']
-            print('face match at...')
-            for face in response['Persons']:
-                similarity = face['FaceMatches'].get('Similarity')
-                similarity_list.append(similarity)
-            print(similarity_list)
+            first_level_exact(outcome)
+            print('here is face match details...')
+            print(face_match)
+            second_level_exact(face_match)
+            print('here is similarity...')
+            print(similarity)
+            print('here is face details...')
+            print(faces)
+            third_level_exact(faces)
+            # print('here is faceID list:')
+            # print(face_ID)
+            print('here is faceId with similarity...')
+            print(similarity)
             break
 
         elif response['JobStatus'] == 'FAILED':
@@ -80,6 +86,55 @@ def read_job_status(jobId):
         else:
             print('Error....Return job detail failed')
             break
+
+
+def first_level_exact(dic):
+    for item in dic:
+        print('item found...')
+        for k, v in item.items():
+            print('Key:')
+            print(k)
+            print('Value:')
+            print(v)
+            if k == 'FaceMatches':
+                face_match.extend(v)
+
+
+def second_level_exact(dic):
+    print('start exacting from face_match list............')
+    print('-' * 30)
+    for item in dic:
+        print('item found.....')
+        for k, v in item.items():
+            print('Key:')
+            print(k)
+            print('Value:')
+            print(v)
+            if k == 'Similarity':
+                similarity.append('Similarity:')
+                similarity.append(v)
+            elif k == 'Face':
+                faces.append(v)
+
+
+def third_level_exact(dic):
+    i = 0
+    print('start exacting from faces list............')
+    print('-' * 30)
+    for item in dic:
+        print('item found.....')
+        for k, v in item.items():
+            print('Key:')
+            print(k)
+            print('Value:')
+            print(v)
+            if k == 'FaceId':
+                face_ID.append('FaceId:')
+                face_ID.append(v)
+                similarity.insert(i,'FaceId:')
+                i = i + 1
+                similarity.insert(i,v)
+                i = i + 3
 
 
 def lambda_handler(event, context):
@@ -94,9 +149,10 @@ def lambda_handler(event, context):
     time.sleep(5)
 
     print('starts get face search: ')
-    read_job_status(jobId)
+    outcome = read_job_status(jobId)
     # detail = get_face_search(jobId)
     # print(str(detail))
+
 
 
 '''
